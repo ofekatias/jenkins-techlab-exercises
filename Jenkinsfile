@@ -10,6 +10,9 @@ pipeline {
         jdk 'jdk11'
         maven 'maven36'
     }
+    environment {
+        NVM_HOME = tool('nvm')
+    }
     stages {
         stage('Build') {
             steps {
@@ -19,6 +22,8 @@ pipeline {
                 sh 'javac -version'
 
                 sh 'mvn --version'
+
+                sh 'nvn --version'
             }
         }
     }
