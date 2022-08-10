@@ -16,6 +16,8 @@ pipeline {
 
                 sh 'java -version'
 
+                sh 'javac -version'
+
                 sh 'mvn --version'
             }
         }
