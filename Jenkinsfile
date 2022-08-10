@@ -23,7 +23,7 @@ pipeline {
 
                 sh 'mvn --version'
 
-                sh 'nvn --version'
+                sh 'nvm --version'
             }
         }
     }
