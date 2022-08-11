@@ -23,7 +23,6 @@ pipeline {
 
                 sh 'mvn --version'
 
-                sh 'node --version'
             }
         }
     }
