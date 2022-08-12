@@ -1,17 +1,18 @@
-properties([
-    buildDiscarder(logRotator(numToKeepStr: '5')),
-    pipelineTriggers([
-        pollSCM('H/5 * * * *')
-    ])
-])
+node {
+    stage('Greeting') {
+        def company = 'puzzle'
+        echo 'join the ${company}'
+        echo "join the ${company}"
+        echo '''join the ${company}'''
+        echo """join the ${company}"""
 
-timestamps() {
-    timeout(time: 10, unit: 'MINUTES') {
-        node {
-            stage('Greeting') {
-                echo 'Hello, World!'
-            }
-        }
+        echo "tabulation>\t<"
+        echo "backspace>\b<"
+        echo "newline>\n<"
+        echo "carriage return>\r<"
+        echo "form feed>\f<"
+        echo "backslash>\\<"
+        echo "single quote>\'<"
+        echo "double quote>\"<"
     }
 }
-
