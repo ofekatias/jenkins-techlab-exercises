@@ -1,14 +1,11 @@
 properties([
-  buildDiscarder(logRotator(numToKeepStr: '5')),
-  disableConcurrentBuilds()
+    parameters([
+        string(name: 'company_parameter', defaultValue: 'puzzle', description: 'The company the pipeline runs in')
+    ])
 ])
 
-timestamps() {
-    timeout(time: 10, unit: 'MINUTES') {
-        node {
-            stage('Greeting') {
-                echo 'Hello, World!'
-            }
-        }
+node {
+    stage('Build') {
+        echo "Running ${env.BUILD_ID} on ${env.JENKINS_URL} in company ${params.company_parameter}"
     }
 }
